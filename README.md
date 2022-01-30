@@ -33,23 +33,21 @@ struct Profile: CustomStringConvertible {
     var description: String {
         """
         \(name)\n
-        I am a software engineer focused on iOS development.
-        Working on teams with project managers, developers, 
-        and designers, I have built mobile applications and 
-        SDKs focused on excellent user experience and design.
-        I am looking to work in a collaborative environment 
-        where I can develop products that improve people's lives.\n
+        I am a software engineer and designer, currently
+        working on trycandle.com. We are building finance
+        tools with the goal of improving people's lives.\n
         """
     }
     
     enum Skill: String, CaseIterable {
+        case figma, framer, final cut
+        case rN, TypeScript, JS
         case swift, objc, uIKit, swiftUI
-        case testing, git, fastlane
-        case vim, rN, combine
     }
     
-    func proficient(in skills: [Skill] = Skill.allCases) -> String {
+    func proficient(in skills: [Skill] = .allCases) -> String {
         skills
+            .lazy
             .map(\.rawValue)
             .map(\.capitalized)
             .map { "- " + $0 + "\n" }
