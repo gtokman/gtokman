@@ -40,7 +40,7 @@ struct Profile: CustomStringConvertible {
     }
     
     enum Skill: String, CaseIterable {
-        case figma, framer, final cut
+        case figma, framer, finalCut
         case rN, TypeScript, JS
         case swift, objc, uIKit, swiftUI
     }
