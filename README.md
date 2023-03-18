@@ -17,41 +17,5 @@
 <br>
 
 ```swift
-
-import Foundation
-
-struct Profile: CustomStringConvertible {
-    
-    let name = "Gary Tokman"
-    
-    var description: String {
-        """
-        \(name)\n
-        I am a software engineer and designer, currently
-        working on trycandle.com. We are building finance
-        tools with the goal of improving people's lives.\n
-        """
-    }
-    
-    enum Skill: String, CaseIterable {
-        case figma, framer, finalCut
-        case rN, TypeScript, JS
-        case swift, objc, uIKit, swiftUI
-    }
-    
-    func proficient(in skills: [Skill] = .allCases) -> String {
-        skills
-            .lazy
-            .map(\.rawValue)
-            .map(\.capitalized)
-            .map { "- " + $0 + "\n" }
-            .reduce("Skills: \n", +)
-    }
-}
-
-// Paste into a playground!
-let profile = Profile()
-print(profile.description)
-print(profile.proficient())
-
+print("hello world")
 ```
